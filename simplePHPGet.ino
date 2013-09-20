@@ -16,10 +16,10 @@
 // Define CC3000 chip pins
 #define ADAFRUIT_CC3000_IRQ   3
 #define ADAFRUIT_CC3000_VBAT  5
-#define ADAFRUIT_CC3000_CS    9
+#define ADAFRUIT_CC3000_CS    10
 
 // Buffer for float to String conversion
-// The conversion goes from a float value to a String with two numbers after the decimal.  That means a buffer of size 10 can accomodate a float value up to 999999.99 in order for the last entry to be \0
+// The conversion goes from a float value to a String with two numbers after the decimal.  That means a buffer of size 10 can accommodate a float value up to 999999.99 in order for the last entry to be \0
 char buffer[10];
 
 // WiFi network (change with your settings !)
@@ -117,7 +117,6 @@ void loop(void)
 send_request
 ********************************************************************************/
 bool send_request (String request) {
-     Serial.println("----- TOP OF SEND_REQUEST()--------- ");
      // Transform to char
     char requestBuf[request.length()+1];
     request.toCharArray(requestBuf,request.length()); 
